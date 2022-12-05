@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Détails d'un animal</title>
+	<link type='text/css' rel="stylesheet" href="view/css/jquery-ui.css"  >
+</head>
+<body>
+	<!--<form action="?c=CDA" method="post">-->
+	<center>
+		<form action="../controleur/formulaire_ajout.php" method="post">
+			<fieldset style="width:260px">
+			<label for="nom">Nom</label>
+			<input type="text" name="nom" id="nom" value=""/>
+			<br><br>
+			<label for="espece">Espece</label>
+			<input type="text" name="espece" id="espece" value=""/>
+			<br><br>
+			<label for="date_naissance">date_naissance</label>
+			<input type="text" name="date_naissance" id="date" value=""/>
+			<br><br>
+			<label for="commentaires">commentaires</label>
+			<input type="text" name="commentaires" id="comment" value=""/>
+			<br><br>
+			<label for="sexe">Sexe</label>
+			<select name="sexe" id="sexe">
+				<option ></option>
+				<option value="M">M</option>
+				<option value="F" >F</option>
+			</select>
+			<br><br>
+			<button type="submit" name="submit">Oui je le veux</button>
+			</fieldset>
+		</form>
+	<a href="../index.php">Retour</a>
+	</center>
+	
+	<script src="view/js/jquery-3.3.1.min.js"></script>
+	<script src="view/js/jquery-ui.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(function() {
+				$( "#date" ).datepicker({
+				altField: "#date",
+				closeText: 'Fermer',
+				prevText: 'Précédent',
+				nextText: 'Suivant',
+				currentText: 'Aujourd\'hui',
+				monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+				monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+				dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+				dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+				dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+				weekHeader: 'Sem.',
+				dateFormat: 'yy-mm-dd'
+				});
+			});
+	});
+	</script>
+</body>
+</html>

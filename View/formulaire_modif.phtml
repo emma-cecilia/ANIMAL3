@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>FORM</title>
+</head>
+<body>
+<center>
+	<form action="../model/modif_animal.php" method="POST">
+	<!--<form action="?c=CDA" method="POST">-->
+	<fieldset style="width:260px">
+		<legend>Modification Animal</legend>
+		Espece : 
+		<select name="espece">
+			<option value="chat" <?php if($animal->espece=='chat') echo 'selected'; ?>>chat</option>
+			<option value="chien" <?php if($animal->espece=='chien') echo 'selected'; ?>>chien</option>
+			<option value="kangourou" <?php if($animal->espece=='kangourou') echo 'selected'; ?>>kangourou</option>
+			<option value="cheval" <?php if($animal->espece=='cheval') echo 'selected'; ?>>cheval</option>
+			<option value="tortue" <?php if($animal->espece=='tortue') echo 'selected'; ?>>tortue</option>
+		</select>
+		Sexe : 
+		<select name="sexe">
+			<option value="M" <?php if($animal->sexe=='M') echo 'selected'; ?>>M</option>
+			<option value="F" <?php if($animal->sexe=='F') echo 'selected'; ?>>F</option>
+		</select>
+		<br><br>Nom :<br><input name="nom" type="text" value="<?php echo $animal->nom; ?>">
+		<br><br>Date de Naissance :<br><input name="date" type="text" value="<?php echo $animal->date_naissance; ?>">
+		<br><br>Commentaire :<br>
+		<textarea name="commentaire" ><?php echo $animal->commentaires; ?></textarea>
+		<input name="id" type="hidden" value="<?php echo $animal->id; ?>">
+		<hr><input type="submit" value="Modifier">
+	</fieldset>
+	</form>
+<a href="../index.php">Retour</a></center>
+</body>
+</html>
